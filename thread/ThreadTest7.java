@@ -1,12 +1,10 @@
 package wenge.thread;
 
-public class ThreadTest7
-{
-	public static void main(String[] args)
-	{
+public class ThreadTest7 {
+	public static void main(String[] args) {
 		Example3 e = new Example3();
 		TheThread5 t1 = new TheThread5(e);
-//		e = new Example3();
+		// e = new Example3();
 		TheThread6 t2 = new TheThread6(e);
 
 		t1.start();
@@ -14,24 +12,17 @@ public class ThreadTest7
 	}
 }
 
-class Example3
-{
-//	没有实际意义，任何一个对象都行。
+class Example3 {
+	// 没有实际意义，任何一个对象都行。
 	private Object object = new Object();
 
-	public void execute()
-	{
-//		synchronized代码块
-		synchronized (this)
-		{
-			for (int i = 0; i < 20; i++)
-			{
-				try
-				{
+	public void execute() {
+		// synchronized代码块
+		synchronized (this) {
+			for (int i = 0; i < 20; i++) {
+				try {
 					Thread.sleep((long) (Math.random() * 1000));
-				}
-				catch (InterruptedException e)
-				{
+				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 
@@ -41,57 +32,44 @@ class Example3
 
 	}
 
-	public void execute2()
-	{
-		synchronized(this)
-		{
-			for (int i = 0; i < 20; i++)
-			{
-				try
-				{
+	public void execute2() {
+		synchronized (this) {
+			for (int i = 0; i < 20; i++) {
+				try {
 					Thread.sleep((long) (Math.random() * 1000));
-				}
-				catch (InterruptedException e)
-				{
+				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
 
 				System.out.println("world: " + i);
 			}
 		}
-		
-		
+
 	}
 }
 
-class TheThread5 extends Thread
-{
+class TheThread5 extends Thread {
 	private Example3 example;
 
-	public TheThread5(Example3 example)
-	{
+	public TheThread5(Example3 example) {
 		this.example = example;
 	}
 
 	@Override
-	public void run()
-	{
+	public void run() {
 		this.example.execute();
 	}
 }
 
-class TheThread6 extends Thread
-{
+class TheThread6 extends Thread {
 	private Example3 example;
 
-	public TheThread6(Example3 example)
-	{
+	public TheThread6(Example3 example) {
 		this.example = example;
 	}
 
 	@Override
-	public void run()
-	{
+	public void run() {
 		this.example.execute2();
 	}
 }
