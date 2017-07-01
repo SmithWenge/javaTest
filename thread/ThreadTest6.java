@@ -4,6 +4,7 @@ public class ThreadTest6 {
 	public static void main(String[] args) {
 		Example2 example = new Example2();
 		Thread t1 = new TheThread3(example);
+		example = new Example2();
 		Thread t2 = new TheThread4(example);
 
 		t1.start();

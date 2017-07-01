@@ -13,7 +13,7 @@ public class ThreadTest7 {
 }
 
 class Example3 {
-	// 没有实际意义，任何一个对象都行。
+	// 没有实际意义，任何一个对象都行,不写也没事用this就好。
 	private Object object = new Object();
 
 	public void execute() {

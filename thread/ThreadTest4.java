@@ -6,7 +6,7 @@ public class ThreadTest4 {
 		Thread t1 = new Thread(r);
 		
 //		重新声明一个对象的话，就又会打印20个结果。这是因为不是原来的对象了相对应的成员变量是分别在两个对象里的，所以当然也是不会相互影响的。所以会打印20个结果。
-		r = new Thread4();
+//		r = new Thread4();
 		Thread t2 = new Thread(r);
 		
 		t1.start();
